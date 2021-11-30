@@ -1,0 +1,27 @@
+{
+  "name": "vue-jenkins-docker",
+  "version": "1.0.0",
+  "description": "test creating a docker image with vue application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DennisvG/vue-jenkins-docker.git"
+  },
+  "keywords": [
+    "vue",
+    "jenkins",
+    "docker"
+  ],
+  "author": "DennisvG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DennisvG/vue-jenkins-docker/issues"
+  },
+  "homepage": "https://github.com/DennisvG/vue-jenkins-docker#readme",
+  "dependencies": {
+    "@vue/cli": "^4.5.15"
+  }
+}
