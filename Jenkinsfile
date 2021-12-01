@@ -1,6 +1,5 @@
 pipeline {
   agent any
-  tools {nodejs "NodeJS 16.13.0"}
   stages {
     stage('install') {
       steps {
@@ -10,5 +9,21 @@ pipeline {
       }
     }
 
+    stage('Create docker image') {
+      agent {
+        dockerfile {
+          filename 'Dockerfile'
+        }
+
+      }
+      steps {
+        sh '''echo "Build application"
+npm run build'''
+      }
+    }
+
+  }
+  tools {
+    nodejs 'NodeJS 16.13.0'
   }
 }
