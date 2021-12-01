@@ -20,7 +20,6 @@ npm run build'''
       agent any
       steps {
         sh 'docker build -f Dockerfile --no-cache -t vue-welcome-app .'
-        }
       }
     }
 
