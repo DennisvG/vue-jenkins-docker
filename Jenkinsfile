@@ -19,11 +19,7 @@ npm run build'''
     stage('Create docker image') {
       agent any
       steps {
-        script {
-            app = docker.build("dengruns/vue-welcome-app")
-            app.inside {
-              sh 'echo $(curl localhost:8080)'
-            }
+        sh 'docker build -f Dockerfile --no-cache -t vue-welcome-app .'
         }
       }
     }
