@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx AS build
 RUN pwd
 RUN ls -l
-COPY dist /usr/share/nginx/html
+COPY /buid/dist /usr/share/nginx/html
