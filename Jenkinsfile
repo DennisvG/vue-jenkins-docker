@@ -10,15 +10,15 @@ pipeline {
     }
 
     stage('Create docker image') {
+      steps {
+        sh '''echo "Build application"
+npm run build'''
+      }
+    
       agent {
         dockerfile {
           filename 'Dockerfile'
         }
-
-      }
-      steps {
-        sh '''echo "Build application"
-npm run build'''
       }
     }
 
