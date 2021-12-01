@@ -21,6 +21,7 @@ npm run build'''
         dockerfile {
           filename 'Dockerfile'
           additionalBuildArgs  '--tag rppp:$BRANCH_NAME --no-cache'
+          args '-v $WORKSPACE:/project -w /project'
         }
 
       }
