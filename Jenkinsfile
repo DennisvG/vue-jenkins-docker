@@ -20,6 +20,8 @@ npm run build'''
       agent {
         dockerfile {
           filename 'Dockerfile'
+          additionalBuildArgs  '--tag rppp:$BRANCH_NAME'
+          args '-v $WORKSPACE'
         }
 
       }
