@@ -1,13 +1,12 @@
 pipeline {
   agent any
+  tools {nodejs "NodeJS 16.13.0"}
   stages {
     stage('install') {
       steps {
-        wrap([$class: 'NodeJSBuildWrapper', nodeJSInstallationName: 'NodeJS 16.13.0' ]) {
-          sh 'npm --version'
-        }
         sh '''echo "Install npm packages"
-npm install'''
+        npm --version
+        npm install'''
       }
     }
 
