@@ -20,7 +20,7 @@ npm run build'''
       agent any
       steps {
         script {
-            app = docker.build("<DOCKER_HUB_USERNAME>/train-schedule")
+            app = docker.build("dengruns/vue-welcome-app")
             app.inside {
               sh 'echo $(curl localhost:8080)'
             }
