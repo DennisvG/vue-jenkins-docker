@@ -20,7 +20,7 @@ npm run build'''
       agent {
         dockerfile {
           filename 'Dockerfile'
-          dir 'build'
+          dir '.'
         }
 
       }
