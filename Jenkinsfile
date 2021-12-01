@@ -17,16 +17,10 @@ npm run build'''
     }
 
     stage('Create docker image') {
-      agent {
-        dockerfile {
-          filename 'Dockerfile'
-          additionalBuildArgs  '--tag rppp:$BRANCH_NAME --no-cache'
-          args '-v $WORKSPACE:/project -w /project'
-        }
-
-      }
+      agent any
       steps {
         echo 'Docker image build'
+        sh 'docker build -f Dockerfile -t vue-welcome-app .'
       }
     }
 
