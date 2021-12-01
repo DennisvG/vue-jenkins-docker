@@ -9,16 +9,22 @@ pipeline {
       }
     }
 
-    stage('Create docker image') {
+    stage('Build for production') {
       steps {
-        sh '''echo "Build application"
+        sh '''echo "Build for production"
 npm run build'''
       }
-    
+    }
+
+    stage('Create docker image') {
       agent {
         dockerfile {
           filename 'Dockerfile'
         }
+
+      }
+      steps {
+        echo 'Docker image build'
       }
     }
 
