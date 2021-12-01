@@ -20,7 +20,7 @@ npm run build'''
       agent {
         dockerfile {
           filename 'Dockerfile'
-          additionalBuildArgs  '$WORKSPACE --tag rppp:$BRANCH_NAME --no-cache'
+          additionalBuildArgs  '--tag rppp:$BRANCH_NAME --no-cache'
         }
 
       }
