@@ -29,6 +29,8 @@ npm run build'''
           registryCredentialsId "${DOCKERCREDENTIALS}"
         }
       }
+      steps {
+        sh '''echo "Build dockerimage"'''
     }
   }
   tools {
