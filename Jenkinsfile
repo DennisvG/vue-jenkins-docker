@@ -33,8 +33,8 @@ npm run build'''
         sh '''echo "Build dockerimage"'''
     }
   }
+  }
   tools {
     nodejs 'NodeJS 16.13.0'
   }
-}
 }
