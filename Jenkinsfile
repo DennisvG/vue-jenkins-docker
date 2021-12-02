@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment {
+     imageName = "dengruns/vue-welcome-app:$BUILD_ID"
+  }
   stages {
     stage('install') {
       steps {
@@ -20,7 +23,7 @@ npm run build'''
       agent {
         dockerfile {
           filename 'Dockerfile'
-          additionalBuildArgs "--build-arg -t dengruns/vue-welcome-app:$BUILD_ID"
+          additionalBuildArgs "--no-cache"
         }
 
       }
