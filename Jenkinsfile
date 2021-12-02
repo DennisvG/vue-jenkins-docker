@@ -20,7 +20,7 @@ npm run build'''
       agent {
         dockerfile {
           filename 'Dockerfile'
-          additionalBuildArgs "-t dengruns/vue-welcome-app:$BUILD_ID"
+          args "-t dengruns/vue-welcome-app:$BUILD_ID"
         }
 
       }
