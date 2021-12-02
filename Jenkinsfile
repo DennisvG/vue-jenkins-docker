@@ -25,7 +25,7 @@ npm run build'''
         dockerfile {
           filename 'Dockerfile'
           additionalBuildArgs "--no-cache"
-          registryUrl "${DOCKERIMAGEURL}}"
+          registryUrl "${DOCKERIMAGEURL}"
           registryCredentialsId "${DOCKERCREDENTIALS}"
         }
       }
