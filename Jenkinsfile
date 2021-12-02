@@ -25,7 +25,7 @@ npm run build'''
       agent {
         dockerfile {
           filename 'Dockerfile'
-          additionalBuildArgs "--no-cache tag ${IMAGENAME}"
+          additionalBuildArgs "--no-cache"
           //registryUrl "${DOCKERIMAGEURL}"
           registryCredentialsId "${DOCKERCREDENTIALS}"
         }
