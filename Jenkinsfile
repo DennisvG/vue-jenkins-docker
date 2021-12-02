@@ -25,23 +25,11 @@ npm run build'''
         dockerfile {
           filename 'Dockerfile'
           additionalBuildArgs "--no-cache"
-          registryUrl ${DOCKERIMAGEURL}}
-          registryCredentialsId ${DOCKERCREDENTIALS}
+          registryUrl "${DOCKERIMAGEURL}}"
+          registryCredentialsId "${DOCKERCREDENTIALS}"
         }
-
-      }
-      steps {
-        sh '''#run detached (-d) and give a specific name, so it can be stopped
-        docker run -d --name vue-welcome-app-$BUILD_ID dengruns/vue-welcome-app:$BUILD_ID
-        sleep 6'''
-        sh '''echo "container logging:"
-        docker logs vue-welcome-app-$BUILD_ID'''
-        sh '''echo "Stopping and remove docker container"
-        docker kill vue-welcome-app-$BUILD_ID
-        docker rm vue-welcome-app-$BUILD_ID'''
       }
     }
-
   }
   tools {
     nodejs 'NodeJS 16.13.0'
