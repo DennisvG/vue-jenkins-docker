@@ -19,7 +19,7 @@ npm run build'''
     stage('Create docker image') {
       agent any
       steps {
-        sh '''docker build -f Dockerfile --no-cache -t dengruns/vue-welcome-app:$BUILD_ID .'''
+        sh 'docker build -f Dockerfile --no-cache -t dengruns/vue-welcome-app:$BUILD_ID .'
         sh '''#run detached (-d) and give a specific name, so it can be stopped
         docker run -d --name�vue-welcome-app-$BUILD_ID�dengruns/vue-welcome-app:$BUILD_ID
         sleep 6'''
