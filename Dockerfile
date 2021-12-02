@@ -1,4 +1,4 @@
-FROM node:lts-alpine3.13 as buildstage
+FROM node:lts-alpine3.13 as build-stage
 # build stage
 #FROM node:lts-alpine as build-stage
 WORKDIR /app
