@@ -17,14 +17,9 @@ npm run build'''
     }
 
     stage('Create docker image') {
-      agent {
-        dockerfile {
-          filename 'Dockerfile'
-        }
-
-      }
+      agent any
       steps {
-        sh '#docker build -f Dockerfile --no-cache -t dengruns/vue-welcome-app .'
+        sh 'docker build -f Dockerfile -t dengruns/vue-welcome-app:$BUILD_ID .'
       }
     }
 
