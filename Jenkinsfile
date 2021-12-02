@@ -37,3 +37,4 @@ npm run build'''
     nodejs 'NodeJS 16.13.0'
   }
 }
+}
