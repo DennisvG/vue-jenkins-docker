@@ -18,8 +18,8 @@ npm run build'''
 
     stage('Create docker image') {
       agent {
-        docker {
-          image 'dengruns/vue-jenkins-docker:$BUILD_ID'
+        dockerfile {
+          filename 'Dockerfile'
         }
 
       }
