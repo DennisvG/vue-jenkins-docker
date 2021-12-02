@@ -3,6 +3,7 @@ pipeline {
   environment {
      DOCKERIMAGEURL = "https://hub.docker.com"
      DOCKERCREDENTIALS = "Dockerhub"
+     IMAGENAME = "dengruns/vue-welcome-app"
   }
   stages {
     stage('install') {
@@ -24,8 +25,8 @@ npm run build'''
       agent {
         dockerfile {
           filename 'Dockerfile'
-          additionalBuildArgs "--no-cache"
-          registryUrl "${DOCKERIMAGEURL}"
+          additionalBuildArgs "--no-cache tag ${IMAGENAME}"
+          //registryUrl "${DOCKERIMAGEURL}"
           registryCredentialsId "${DOCKERCREDENTIALS}"
         }
       }
