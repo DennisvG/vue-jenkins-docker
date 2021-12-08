@@ -31,6 +31,19 @@ npm run build'''
       }
     }
   }
+  stage('Push docker image') {
+      steps {
+        sh '''echo \'Push image to docker\' '''
+        script {
+          docker.withRegistry('', imageRegisterCredentials ) {
+            dockerImage.push()
+            dockerImage.push('latest')
+          }
+        }
+      }
+  }
+
+
   tools {
     nodejs 'NodeJS 16.13.0'
   }
