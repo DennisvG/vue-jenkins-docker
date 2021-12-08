@@ -30,8 +30,8 @@ npm run build'''
         }
       }
     }
-  }
-  stage('Push docker image') {
+
+    stage('Push docker image') {
       steps {
         sh '''echo \'Push image to docker\' '''
         script {
@@ -41,8 +41,8 @@ npm run build'''
           }
         }
       }
+    }
   }
-
 
   tools {
     nodejs 'NodeJS 16.13.0'
