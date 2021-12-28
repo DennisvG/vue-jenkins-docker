@@ -5,7 +5,7 @@ RUN cp -R "${NGINX_DEFAULT_CONF_PATH}" /tmp
 # Add application sources
 #ADD $WORKSPACE/nginxconf/mime.types "${NGINX_CONF_PATH}"
 #ADD $WORKSPACE/nginxconf/nginx.conf "${NGINX_CONF_PATH}"
-ADD $WORKSPACE/nginxconf/nginx-default-cfg/*.conf "${NGINX_DEFAULT_CONF_PATH}"
+#ADD $WORKSPACE/nginxconf/nginx-default-cfg/*.conf "${NGINX_DEFAULT_CONF_PATH}"
 #ADD $WORKSPACE/nginx-cfg/*.conf "${NGINX_CONFIGURATION_PATH}"
 ADD $WORKSPACE/dist .
 
