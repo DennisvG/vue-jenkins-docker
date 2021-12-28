@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/nginx-120
 # backup
-RUN cp -R "${NGINX_CONF_PATH}" "${NGINX_CONF_PATH}-org"
-RUN cp -R "${NGINX_DEFAULT_CONF_PATH}" "${NGINX_DEFAULT_CONF_PATH}-org"
+RUN cp -R "${NGINX_CONF_PATH}" /tmp
+RUN cp -R "${NGINX_DEFAULT_CONF_PATH}" /tmp
 # Add application sources
 ADD $WORKSPACE/nginxconf/nginx.conf "${NGINX_CONF_PATH}"
 ADD $WORKSPACE/nginxconf/mime.types "${NGINX_CONF_PATH}"
